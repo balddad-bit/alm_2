@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew J. La Marca, CFE, CAMS — Fraud Expert & Speaker</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:        #002855;
+    --navy-deep:   #001A3A;
+    --navy-mid:    #0A3660;
+    --blue:        #0D4FA0;
+    --blue-lt:     #1A5FAB;
+    --near-black:  #0B0F18;
+    --text:        #1A2232;
+    --text-mid:    #3D4E60;
+    --muted:       #64748B;
+    --light-muted: #94A3B8;
+    --border:      #CBD5E1;
+    --border-lt:   #E2E8F0;
+    --bg:          #F7F9FC;
+    --white:       #FFFFFF;
+    --section-alt: #F1F5F9;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══════════════════════════════
+     NAVIGATION
+  ═══════════════════════════════ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: 60px;
+    background: var(--near-black);
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-brand {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .nav-monogram {
+    width: 34px; height: 34px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem; font-weight: 700; color: var(--white);
+    letter-spacing: 0.02em; flex-shrink: 0;
+  }
+
+  .nav-name {
+    font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.85);
+    letter-spacing: 0.02em;
+  }
+  .nav-creds {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em; margin-top: 1px;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: rgba(255,255,255,0.9); }
+
+  /* ═══════════════════════════════
+     HERO
+  ═══════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    display: flex; align-items: center;
+    padding: 8rem 3rem 6rem;
+    position: relative; overflow: hidden;
+  }
+
+  /* Subtle ruled lines */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.022) 0px,
+        rgba(255,255,255,0.022) 1px,
+        transparent 1px,
+        transparent 80px
+      );
+    pointer-events: none;
+  }
+
+  /* Right accent column */
+  .hero-rule {
+    position: absolute; right: 0; top: 0; bottom: 0; width: 5px;
+    background: var(--navy);
+  }
+
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 360px; gap: 6rem;
+    align-items: center;
+  }
+
+  .hero-overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-overline::before {
+    content: ''; display: block; width: 36px; height: 1px;
+    background: var(--blue-lt); opacity: 0.6;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 4.5vw, 4.4rem);
+    font-weight: 900; line-height: 1.04;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 .first { display: inline; }
+  h1 .last {
+    display: inline;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400; font-style: italic;
+  }
+
+  .hero-role {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.4); margin-bottom: 2.2rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-role strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+  .hero-body {
+    font-size: 1.05rem; line-height: 1.82; font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2.8rem; max-width: 560px;
+    border-left: 2px solid var(--blue);
+    padding-left: 1.4rem;
+  }
+  .hero-body strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-fill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--navy); color: var(--white);
+    padding: 0.88rem 2rem; font-size: 0.78rem;
+    font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer; transition: background 0.2s;
+  }
+  .btn-fill:hover { background: var(--navy-mid); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: rgba(255,255,255,0.55);
+    padding: 0.88rem 2rem; font-size: 0.78rem;
+    font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.12); cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-outline:hover { color: var(--white); border-color: rgba(255,255,255,0.35); }
+
+  /* Hero right panel */
+  .hero-panel {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 2rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+
+  .credential-block {
+    display: flex; gap: 1rem;
+  }
+  .cred-badge {
+    flex: 1; padding: 1rem;
+    background: var(--navy); border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .cred-abbr {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--white);
+    line-height: 1;
+  }
+  .cred-name {
+    display: block; font-size: 0.56rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-top: 0.35rem;
+    line-height: 1.4;
+  }
+
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: rgba(255,255,255,0.06);
+  }
+  .stat-cell {
+    background: var(--navy-deep); padding: 1.1rem;
+    text-align: center;
+  }
+  .stat-n {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--white);
+    line-height: 1;
+  }
+  .stat-l {
+    display: block; font-size: 0.6rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-top: 0.35rem;
+  }
+
+  /* ═══════════════════════════════
+     GENERIC SECTION CHROME
+  ═══════════════════════════════ */
+  .wrap {
+    max-width: 1100px; margin: 0 auto; padding: 5.5rem 3rem;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 0.7rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .eyebrow::before {
+    content: ''; width: 20px; height: 1px; background: var(--blue);
+  }
+  .eyebrow.light { color: rgba(255,255,255,0.4); }
+  .eyebrow.light::before { background: rgba(255,255,255,0.3); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 2.6vw, 2.5rem);
+    font-weight: 700; line-height: 1.18; letter-spacing: -0.01em;
+    color: var(--text); margin-bottom: 2.8rem;
+  }
+  h2.white { color: var(--white); }
+
+  .divider {
+    width: 100%; height: 1px;
+    background: var(--border-lt);
+  }
+
+  /* ═══════════════════════════════
+     BIO
+  ═══════════════════════════════ */
+  #bio { background: var(--white); border-top: 1px solid var(--border-lt); }
+
+  .bio-layout {
+    display: grid; grid-template-columns: 1fr 320px; gap: 5rem; align-items: start;
+  }
+
+  .bio-copy p {
+    font-size: 1rem; line-height: 1.85; color: var(--text-mid);
+    margin-bottom: 1.2rem;
+  }
+  .bio-copy p strong { color: var(--text); font-weight: 600; }
+
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.8rem;
+  }
+  .tag {
+    display: inline-block; padding: 0.32rem 0.8rem;
+    background: var(--section-alt); border: 1px solid var(--border-lt);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* Sidebar cards */
+  .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .info-panel {
+    border: 1px solid var(--border-lt);
+    border-left: 3px solid var(--navy);
+  }
+  .info-panel-head {
+    padding: 0.8rem 1.2rem;
+    background: var(--section-alt);
+    border-bottom: 1px solid var(--border-lt);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--navy);
+  }
+  .info-panel-body { padding: 1rem 1.2rem; }
+  .info-panel-body p, .info-panel-body a {
+    font-size: 0.85rem; color: var(--text-mid); line-height: 1.65;
+    text-decoration: none;
+  }
+  .info-panel-body a:hover { color: var(--navy); }
+
+  .tl { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .tl-row {
+    display: flex; gap: 0.8rem; padding-bottom: 0.8rem; position: relative;
+  }
+  .tl-row:not(:last-child)::after {
+    content: ''; position: absolute; left: 4px; top: 14px; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--navy); flex-shrink: 0; margin-top: 6px;
+  }
+  .tl-dot.dim { background: var(--border); }
+  .tl-role { font-size: 0.8rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .tl-co { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
+
+  /* ═══════════════════════════════
+     ENGAGEMENTS
+  ═══════════════════════════════ */
+  #engagements { background: var(--section-alt); border-top: 1px solid var(--border-lt); }
+
+  .filter-bar {
+    display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+  }
+  .fbtn {
+    padding: 0.4rem 1rem; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; background: var(--white);
+    border: 1px solid var(--border); color: var(--muted);
+    transition: all 0.15s;
+  }
+  .fbtn.on, .fbtn:hover {
+    background: var(--navy-deep); border-color: var(--navy-deep);
+    color: var(--white);
+  }
+
+  .eng-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .ecard {
+    background: var(--white); border: 1px solid var(--border-lt);
+    padding: 1.6rem; position: relative; overflow: hidden;
+    transition: box-shadow 0.22s, transform 0.18s;
+  }
+  .ecard::after {
+    content: ''; position: absolute; top: 0; left: 0; bottom: 0;
+    width: 3px; background: var(--navy);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.25s;
+  }
+  .ecard:hover {
+    box-shadow: 0 4px 24px rgba(0,40,85,0.08);
+    transform: translateY(-2px);
+  }
+  .ecard:hover::after { transform: scaleY(1); }
+
+  .etype {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--light-muted); margin-bottom: 0.55rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .etype.podcast { color: var(--blue); }
+  .etype.webinar { color: #2D6A4F; }
+  .etype.fireside { color: #7B4F00; }
+
+  .epip {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: currentColor; flex-shrink: 0;
+  }
+
+  .etitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.98rem; font-weight: 700; color: var(--text);
+    line-height: 1.3; margin-bottom: 0.4rem;
+  }
+  .eorg { font-size: 0.78rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .edesc { font-size: 0.82rem; color: var(--muted); line-height: 1.62; margin-bottom: 0.85rem; }
+  .emeta {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    color: var(--light-muted); padding-top: 0.7rem;
+    border-top: 1px solid var(--border-lt);
+  }
+
+  /* ═══════════════════════════════
+     TOPICS (dark)
+  ═══════════════════════════════ */
+  #topics { background: var(--near-black); border-top: 1px solid rgba(255,255,255,0.05); }
+
+  .topic-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    margin-top: 0;
+  }
+
+  .topic-cell {
+    background: var(--near-black); padding: 2.2rem;
+    transition: background 0.2s;
+  }
+  .topic-cell:hover { background: #0F1520; }
+
+  .t-icon { font-size: 1.5rem; margin-bottom: 0.9rem; display: block; opacity: 0.8; }
+  .t-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700; color: var(--white);
+    margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .t-desc { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.7; }
+
+  /* ═══════════════════════════════
+     GALLERY (collapsible)
+  ═══════════════════════════════ */
+  #gallery { background: var(--white); border-top: 1px solid var(--border-lt); }
+
+  .gallery-toggle {
+    width: 100%; padding: 1.4rem 3rem;
+    background: var(--white); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border-lt);
+    transition: background 0.15s;
+  }
+  .gallery-toggle:hover { background: var(--section-alt); }
+
+  .gallery-toggle-left {
+    display: flex; align-items: center; gap: 1.4rem;
+  }
+  .gallery-toggle-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--navy);
+  }
+  .gallery-preview {
+    display: flex; gap: 6px;
+  }
+  .gp-thumb {
+    width: 48px; height: 36px; object-fit: cover;
+    border: 1px solid var(--border); opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .gallery-toggle:hover .gp-thumb { opacity: 1; }
+
+  .gallery-chevron {
+    font-size: 1rem; color: var(--muted);
+    transition: transform 0.3s;
+    font-style: normal;
+  }
+  .gallery-chevron.open { transform: rotate(180deg); }
+
+  .gallery-body {
+    display: none; padding: 2.5rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .gallery-body.open { display: block; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 300px 260px;
+    gap: 8px;
+  }
+
+  .gitem {
+    position: relative; overflow: hidden; cursor: pointer;
+    background: var(--section-alt);
+  }
+  .gitem img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    transition: transform 0.45s ease;
+  }
+  .gitem:hover img { transform: scale(1.04); }
+
+  .gitem-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,20,50,0.72) 0%, transparent 55%);
+    opacity: 0; transition: opacity 0.28s;
+    display: flex; align-items: flex-end; padding: 1rem 1.1rem;
+  }
+  .gitem:hover .gitem-overlay { opacity: 1; }
+
+  .gcap {
+    font-size: 0.75rem; font-weight: 600; color: var(--white); line-height: 1.4;
+  }
+  .gcap span {
+    display: block; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;
+  }
+
+  .gitem:nth-child(1) { grid-row: 1 / 3; }
+  .gitem:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .gitem:nth-child(3) { grid-column: 3; grid-row: 1; }
+  .gitem:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+
+  .gph {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 0.6rem;
+    border: 1px dashed var(--border); text-align: center;
+    padding: 1rem;
+  }
+  .gph p {
+    font-size: 0.68rem; color: var(--light-muted); line-height: 1.5;
+  }
+  .gph strong { font-size: 0.75rem; color: var(--muted); }
+
+  .gallery-note {
+    margin-top: 1.2rem; font-size: 0.76rem; color: var(--muted);
+    font-style: italic; text-align: center;
+  }
+  .gallery-note a { color: var(--navy); }
+
+  /* ═══════════════════════════════
+     MEDIA
+  ═══════════════════════════════ */
+  #media { background: var(--section-alt); border-top: 1px solid var(--border-lt); }
+
+  .media-list { border: 1px solid var(--border-lt); background: var(--white); }
+  .mrow {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border-lt);
+    transition: background 0.15s;
+  }
+  .mrow:last-child { border-bottom: none; }
+  .mrow:hover { background: var(--section-alt); }
+  .moutlet {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--navy); min-width: 100px; flex-shrink: 0;
+  }
+  .mtitle { font-size: 0.87rem; font-weight: 500; color: var(--text); flex: 1; line-height: 1.4; }
+  .myr { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--light-muted); flex-shrink: 0; }
+
+  /* ═══════════════════════════════
+     CONTACT
+  ═══════════════════════════════ */
+  #contact { background: var(--white); border-top: 1px solid var(--border-lt); }
+
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: start; }
+
+  .c-intro { font-size: 1rem; color: var(--text-mid); line-height: 1.82; margin-bottom: 1.8rem; }
+  .c-intro strong { color: var(--text); }
+
+  .c-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 2rem; }
+  .c-bullets li {
+    display: flex; align-items: baseline; gap: 0.7rem;
+    font-size: 0.87rem; color: var(--text-mid); line-height: 1.45;
+  }
+  .c-bullets li::before { content: '—'; color: var(--navy); font-weight: 700; flex-shrink: 0; }
+
+  .venues-box {
+    background: var(--section-alt); border-left: 3px solid var(--navy);
+    padding: 1.2rem 1.4rem; margin-top: 0;
+  }
+  .venues-box h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .venues-box p { font-size: 0.82rem; color: var(--muted); line-height: 1.85; }
+
+  /* Form */
+  .cform { display: flex; flex-direction: column; gap: 1rem; }
+  .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fld { display: flex; flex-direction: column; gap: 0.3rem; }
+  .fld label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy);
+  }
+  .fld input, .fld select, .fld textarea {
+    background: var(--section-alt); border: 1px solid var(--border);
+    color: var(--text); padding: 0.75rem 0.9rem;
+    font-family: 'Inter', sans-serif; font-size: 0.88rem;
+    outline: none; transition: border-color 0.18s; width: 100%; resize: vertical;
+  }
+  .fld input:focus, .fld select:focus, .fld textarea:focus {
+    border-color: var(--navy); background: var(--white);
+  }
+  .fld select option { background: var(--white); }
+  .form-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .form-note { font-size: 0.72rem; color: var(--muted); max-width: 240px; line-height: 1.55; }
+  #fok {
+    display: none; padding: 0.85rem 1.1rem; margin-top: 0.5rem;
+    background: #EEF5FF; border: 1px solid var(--blue);
+    color: var(--navy); font-size: 0.85rem; font-weight: 500;
+  }
+
+  /* ═══════════════════════════════
+     FOOTER
+  ═══════════════════════════════ */
+  footer {
+    background: var(--near-black);
+    padding: 2.5rem 3rem;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+    border-top: 3px solid var(--navy);
+  }
+  .f-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 700; color: var(--white);
+  }
+  .f-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; color: rgba(255,255,255,0.28);
+    letter-spacing: 0.08em; margin-top: 0.25rem;
+  }
+  .f-right { text-align: right; }
+  .f-right a { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-decoration: none; }
+  .f-right a:hover { color: var(--white); }
+  .f-right p { font-size: 0.68rem; color: rgba(255,255,255,0.2); margin-top: 0.3rem; }
+
+  /* ═══════════════════════════════
+     LIGHTBOX
+  ═══════════════════════════════ */
+  .lb {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,5,15,0.94);
+    align-items: center; justify-content: center;
+  }
+  .lb.open { display: flex; }
+  .lb img {
+    max-width: 88vw; max-height: 88vh; object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .lb-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    font-size: 1.8rem; color: rgba(255,255,255,0.5);
+    cursor: pointer; background: none; border: none;
+    line-height: 1; transition: color 0.2s;
+  }
+  .lb-close:hover { color: var(--white); }
+
+  /* ═══════════════════════════════
+     REVEAL
+  ═══════════════════════════════ */
+  .r { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .r.v { opacity: 1; transform: none; }
+
+  /* ═══════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════ */
+  @media (max-width: 960px) {
+    .hero-inner, .bio-layout, .contact-layout { grid-template-columns: 1fr; }
+    .hero-panel { display: none; }
+    .topic-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr; grid-template-rows: auto;
+    }
+    .gitem:nth-child(1) { grid-row: auto; }
+    .gitem:nth-child(4) { grid-column: auto; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .wrap { padding: 4rem 1.5rem; }
+    .hero { padding: 6rem 1.5rem 4rem; }
+    footer { padding: 2rem 1.5rem; }
+    .gallery-toggle, .gallery-body { padding-left: 1.5rem; padding-right: 1.5rem; }
+  }
+  @media (max-width: 640px) {
+    .topic-grid, .fr { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gitem { height: 240px; }
+    .gitem:nth-child(4) { grid-column: auto; }
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-monogram" style="width:auto;background:none;border:none;padding:0;">
+        <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer navy frame -->
+          <rect width="52" height="40" rx="5" fill="#001833"/>
+          <!-- Left accent bar -->
+          <rect x="0" y="0" width="4" height="40" rx="2" fill="#0D4FA0"/>
+          <!-- Monogram letters -->
+          <text x="30" y="27" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">AJL</text>
+          <!-- Bottom rule -->
+          <rect x="8" y="33" width="36" height="1.5" fill="#0D4FA0" opacity="0.6"/>
+        </svg>
+      </div>
+    <div>
+      <div class="nav-name">Andrew J. La Marca</div>
+      <div class="nav-creds">CFE &nbsp;·&nbsp; CAMS &nbsp;·&nbsp; ACFE/COSO Fraud Risk Management</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#bio">About</a></li>
+    <li><a href="#engagements">Speaking</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Book Andrew</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-rule"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-overline">Fraud Expert &nbsp;·&nbsp; Author &nbsp;·&nbsp; Keynote Speaker</div>
+      <!-- Name + headshot side by side -->
+      <div style="display:flex; align-items:center; gap:1.4rem; margin-bottom:0.5rem; flex-wrap:nowrap;">
+        <img src="data:image/jpeg;base64,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" alt="Andrew J. La Marca" style="width:90px; height:90px; border-radius:50%; object-fit:cover; object-position:center top; border:3px solid #0D4FA0; flex-shrink:0; display:block;">
+        <h1 style="margin-bottom:0; white-space:nowrap; font-size:clamp(2rem, 3.5vw, 3.6rem);">
+          Andrew J. La Marca
+        </h1>
+      </div>
+      <div class="hero-role">
+        <strong>VP, Fraud &amp; Data Management</strong> &nbsp;·&nbsp; Dun &amp; Bradstreet &nbsp;·&nbsp; Fraud &nbsp;·&nbsp; Research &nbsp;·&nbsp; Managed Services &nbsp;·&nbsp; Data Management
+      </div>
+      <p class="hero-body">
+        <strong>15+ years</strong> on the front lines of commercial fraud — from Federal Reserve Bank podiums to national fraud working groups. A recognized subject matter expert in <strong>B2B fraud, synthetic entity detection, and AI-enabled financial crime</strong>, with engagements spanning government agencies, law enforcement, and the global financial services industry.
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="btn-fill">Book for Your Event →</a>
+        <a href="#engagements" class="btn-outline">View Engagements</a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <div class="credential-block">
+        <div class="cred-badge"><span class="cred-abbr">CFE</span><span class="cred-name">Certified Fraud<br>Examiner</span></div>
+        <div class="cred-badge"><span class="cred-abbr">CAMS</span><span class="cred-name">Anti-Money Laundering<br>Specialist</span></div>
+      </div>
+      <div class="cred-badge" style="text-align:left; padding: 1rem 1.2rem; display:flex; align-items:center; gap:1rem;">
+        <div>
+          <span class="cred-abbr" style="font-size:1.1rem; text-align:left;">ACFE/COSO</span>
+          <span class="cred-name" style="text-align:left; letter-spacing:0.05em;">Fraud Risk Management Certificate &nbsp;·&nbsp; 2025</span>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-cell"><span class="stat-n">15+</span><span class="stat-l">Years in<br>Anti-Fraud</span></div>
+        <div class="stat-cell"><span class="stat-n">25+</span><span class="stat-l">Speaking<br>Events</span></div>
+        <div class="stat-cell"><span class="stat-n">11+</span><span class="stat-l">Years at<br>D&amp;B</span></div>
+        <div class="stat-cell"><span class="stat-n">ACFE</span><span class="stat-l">Chapter Leaders<br>Committee</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Executive Leader &amp; Recognized Authority<br>in Commercial Fraud &amp; Financial Crime</h2>
+    <div class="bio-layout">
+      <div class="bio-copy r">
+        <p>Andrew J. La Marca, CFE, CAMS is the <strong>Vice President of Fraud &amp; Data Management at Dun &amp; Bradstreet</strong>, overseeing global functions spanning multiple time zones across Fraud, Research, Managed Services, and Data Management. With more than 15 years of experience spanning Capital One, Ally Financial, and D&amp;B, Andrew has built one of the most recognizable careers in commercial fraud prevention in the United States.</p>
+        <p>As D&amp;B's Global Fraud Data Owner, Andrew leads the development and continuous improvement of the firm's enterprise-wide fraud risk operating framework — deploying <strong>artificial intelligence, machine learning, and robotic process automation</strong> to detect and prevent emerging threats. He oversees a global organization covering multiple fraud use cases across time zones, with deep specialization in fraud risk intelligence, control design, and advanced analytics. Andrew also serves as an <strong>AI Champion for Dun &amp; Bradstreet</strong>, leading organizational strategy for AI enablement and modernization — driving the adoption of intelligent automation, agentic workflows, and AI-native data architectures across global operations.</p>
+        <p>Andrew holds the <strong>COSO/ACFE Fraud Risk Management Certificate (2025)</strong>, reflecting his commitment to evolving best practices. He serves on the <strong>ACFE Chapter Leaders Committee</strong> and is the sitting <strong>President of the ACFE Lehigh Valley Chapter</strong> — consistently demonstrating commitment to the broader anti-fraud profession beyond his corporate role.</p>
+        <p>A graduate of <strong>The Pennsylvania State University</strong> (B.S., Crime, Law &amp; Justice, 2009), Andrew obtained his CFE in 2014 and CAMS in 2018. He is a contributing author to DigitalCXO and the Information Security Media Group (ISMG), and a recurring expert voice at conferences, podcast studios, and government-sponsored fraud forums nationwide.</p>
+        <div class="tags">
+          <span class="tag">B2B Fraud</span><span class="tag">Commercial Identity</span>
+          <span class="tag">Synthetic Entity Detection</span><span class="tag">KYB Controls</span>
+          <span class="tag">AI-Enabled Fraud</span><span class="tag">Deepfakes &amp; Gen AI</span>
+          <span class="tag">AML / FinCrime</span><span class="tag">DUNS Infrastructure</span>
+          <span class="tag">Entity Resolution</span><span class="tag">UCC Filing Integrity</span>
+          <span class="tag">BEC / Bust-Out Fraud</span><span class="tag">Fraud Data Governance</span>
+        </div>
+      </div>
+
+      <div class="sidebar r">
+        <div class="info-panel">
+          <div class="info-panel-head">Current Role</div>
+          <div class="info-panel-body">
+            <p>VP, Fraud &amp; Data Management<br>Dun &amp; Bradstreet<br><em style="font-size:0.78rem;color:var(--blue)">Fraud &nbsp;·&nbsp; Research &nbsp;·&nbsp; Managed Services &nbsp;·&nbsp; Data Management</em></p>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-head">Career</div>
+          <div class="info-panel-body">
+            <ul class="tl">
+              <li class="tl-row"><div class="tl-dot"></div><div><div class="tl-role">VP, Fraud &amp; Data Management</div><div class="tl-co">Dun &amp; Bradstreet · 2024–Present</div></div></li>
+              <li class="tl-row"><div class="tl-dot"></div><div><div class="tl-role">Sr. Director, Fraud, Compliance &amp; Risk Insights</div><div class="tl-co">Dun &amp; Bradstreet · 2021–2024</div></div></li>
+              <li class="tl-row"><div class="tl-dot"></div><div><div class="tl-role">Director, Fraud &amp; Compliance Operations</div><div class="tl-co">Dun &amp; Bradstreet · 2018–2021</div></div></li>
+              <li class="tl-row"><div class="tl-dot dim"></div><div><div class="tl-role">High Risk Fraud Analyst</div><div class="tl-co">Dun &amp; Bradstreet · 2013–2018</div></div></li>
+              <li class="tl-row"><div class="tl-dot dim"></div><div><div class="tl-role">Bank Fraud Analyst</div><div class="tl-co">Ally Financial · 2011–2013</div></div></li>
+              <li class="tl-row"><div class="tl-dot dim"></div><div><div class="tl-role">Fraud Coordinator</div><div class="tl-co">Capital One · 2009–2011</div></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-head">Credentials</div>
+          <div class="info-panel-body">
+            <p>B.S. Crime, Law &amp; Justice — Penn State, 2009<br><br>
+            <span style="color:var(--navy);font-weight:700">CFE</span> · Certified Fraud Examiner, 2014<br>
+            <span style="color:var(--navy);font-weight:700">CAMS</span> · Anti-Money Laundering Spec., 2018<br>
+            <span style="color:var(--navy);font-weight:700">ACFE/COSO</span> · Fraud Risk Management Cert., 2025</p>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-head">Board Leadership</div>
+          <div class="info-panel-body">
+            <p>ACFE Chapter Leaders Committee &nbsp;·&nbsp; <span style="color:var(--navy);font-weight:600">2026–?</span><br>President, ACFE Lehigh Valley Chapter &nbsp;·&nbsp; <span style="color:var(--navy);font-weight:600">2023–Present</span></p>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-head">Connect</div>
+          <div class="info-panel-body">
+            <a href="https://www.linkedin.com/in/andrewjlam/" target="_blank">LinkedIn: Andrew J. La Marca →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section id="engagements">
+  <div class="wrap">
+    <div class="eyebrow">Speaking History</div>
+    <h2>Conferences, Webinars &amp; Podcast Appearances</h2>
+
+    <div class="filter-bar">
+      <button class="fbtn on" data-f="all">All</button>
+      <button class="fbtn" data-f="conference">Conference</button>
+      <button class="fbtn" data-f="webinar">Webinar / Virtual</button>
+      <button class="fbtn" data-f="fireside">Fireside Chat</button>
+      <button class="fbtn" data-f="podcast">Podcast</button>
+    </div>
+
+    <div class="eng-grid" id="eg">
+
+      <!-- Federal Reserve Philadelphia -->
+      <div class="ecard r" data-t="fireside">
+        <div class="etype fireside"><span class="epip"></span>Fireside Chat</div>
+        <div class="etitle">B2B Fraud in the Age of AI</div>
+        <div class="eorg">Federal Reserve Bank of Philadelphia</div>
+        <div class="edesc">Co-presented fireside on B2B fraud vectors, synthetic entity fraud, and deepfake threats facing financial institutions. Moderated by Molly Dodge, co-presented with Dun &amp; Bradstreet.</div>
+        <div class="emeta">May 2025 &nbsp;·&nbsp; Philadelphia, PA</div>
+      </div>
+
+      <!-- ACAMS Fraud Watch March 2025 -->
+      <div class="ecard r" data-t="webinar">
+        <div class="etype webinar"><span class="epip"></span>Webinar</div>
+        <div class="etitle">In Focus: Fraud Watch</div>
+        <div class="eorg">ACAMS</div>
+        <div class="edesc">Panelist covering breaking fraud developments, regulatory enforcement actions, emerging typologies, and technology defenses for anti-financial crime professionals worldwide.</div>
+        <div class="emeta">March 2025 &nbsp;·&nbsp; Online</div>
+      </div>
+
+      <!-- Leading Detection Podcast -->
+      <div class="ecard r" data-t="podcast">
+        <div class="etype podcast"><span class="epip"></span>Podcast &nbsp;·&nbsp; Spotify</div>
+        <div class="etitle">Leading Detection Podcast</div>
+        <div class="eorg">Leading Detection</div>
+        <div class="edesc">Featured guest on B2B fraud trends, synthetic entity detection, and how data-driven frameworks are transforming commercial fraud prevention for financial institutions.</div>
+        <div class="emeta">Available on Spotify</div>
+      </div>
+
+      <!-- ACFE Bruce Dorris Podcast -->
+      <div class="ecard r" data-t="podcast">
+        <div class="etype podcast"><span class="epip"></span>Podcast &nbsp;·&nbsp; Spotify</div>
+        <div class="etitle">Fraud Talk with Bruce Dorris</div>
+        <div class="eorg">ACFE &nbsp;·&nbsp; Hosted by Bruce Dorris, J.D., CFE, CPA (ACFE President &amp; CEO)</div>
+        <div class="edesc">Guest episode exploring B2B fraud detection, commercial identity risk, and an executive's perspective on evolving fraud typologies facing organizations and financial institutions.</div>
+        <div class="emeta">ACFE Fraud Talk &nbsp;·&nbsp; Available on Spotify</div>
+      </div>
+
+      <!-- IACA -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Annual Conference &nbsp;·&nbsp; Multiple Years</div>
+        <div class="etitle">Business Fraud Landscape, Framework &amp; Best Practices</div>
+        <div class="eorg">IACA — International Association of Commercial Administrators</div>
+        <div class="edesc">Recurring speaker across multiple national IACA conferences covering the B2B fraud business landscape, fraud detection frameworks, and operational best practices for commercial administrators.</div>
+        <div class="emeta">Arizona &nbsp;·&nbsp; Indianapolis &nbsp;·&nbsp; Detroit &nbsp;·&nbsp; Rhode Island (Upcoming)</div>
+      </div>
+
+      <!-- NASS Virtual -->
+      <div class="ecard r" data-t="webinar">
+        <div class="etype webinar"><span class="epip"></span>Virtual Conference</div>
+        <div class="etitle">Business Identity Theft: Protecting the Commercial Registry</div>
+        <div class="eorg">National Association of Secretaries of State (NASS)</div>
+        <div class="edesc">Presented D&amp;B data and analysis on the rise of business identity theft through state registry compromise — including actor tactics, PPP fraud patterns, and D-U-N-S exploitation vectors.</div>
+        <div class="emeta">Virtual &nbsp;·&nbsp; 2020</div>
+      </div>
+
+      <!-- Delaware Fraud Working Group -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Working Group</div>
+        <div class="etitle">B2B Fraud Landscape</div>
+        <div class="eorg">Delaware Fraud Working Group</div>
+        <div class="edesc">Presented to Delaware's cross-sector fraud working group on the current B2B fraud landscape, commercial identity theft typologies, and detection strategies for financial institutions.</div>
+        <div class="emeta">Bally's Delaware &nbsp;·&nbsp; Delaware</div>
+      </div>
+
+      <!-- Keystone Konnection 2023 -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Industry Conference</div>
+        <div class="etitle">Keystone Konnection</div>
+        <div class="eorg">Keystone Konnection</div>
+        <div class="edesc">Speaker at Pennsylvania's premier fraud and risk networking conference, sharing expertise on B2B fraud trends, detection frameworks, and commercial identity risk for fraud and risk leaders.</div>
+        <div class="emeta">2023 &nbsp;·&nbsp; Pennsylvania &nbsp;·&nbsp; Also: Upcoming 2026</div>
+      </div>
+
+      <!-- ACFE Global Fraud Conference 2021 -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Global Conference</div>
+        <div class="etitle">Business Identity Theft</div>
+        <div class="eorg">ACFE Global Fraud Conference</div>
+        <div class="edesc">Spoke on the mechanics of business identity theft — how bad actors exploit corporate registrations, compromise the D-U-N-S system, and how to detect and prevent commercial identity fraud.</div>
+        <div class="emeta">June 21, 2021 &nbsp;·&nbsp; Virtual</div>
+      </div>
+
+      <!-- ACFE Lehigh Valley Chapter -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Chapter Presentation</div>
+        <div class="etitle">Business Identity Theft: The Who, What, Where &amp; How</div>
+        <div class="eorg">ACFE Lehigh Valley Chapter</div>
+        <div class="edesc">Deep-dive for Certified Fraud Examiners covering the full lifecycle of business identity theft — actor motivation, execution methods, detection signals, and remediation paths.</div>
+        <div class="emeta">November 2021 &nbsp;·&nbsp; Lehigh Valley, PA</div>
+      </div>
+
+      <!-- D&B Live LinkedIn Live -->
+      <div class="ecard r" data-t="webinar">
+        <div class="etype webinar"><span class="epip"></span>LinkedIn Live</div>
+        <div class="etitle">Tackling Business Identity Theft in the Age of Cyber-Enabled Fraud</div>
+        <div class="eorg">Dun &amp; Bradstreet Live</div>
+        <div class="edesc">Live broadcast with Ralph A. Gagliardi, CFE (Colorado Bureau of Investigation) on real-world fraud cases, business malfeasance, and institutional response strategies.</div>
+        <div class="emeta">March 2021 &nbsp;·&nbsp; LinkedIn Live</div>
+      </div>
+
+      <!-- ISMG -->
+      <div class="ecard r" data-t="conference">
+        <div class="etype"><span class="epip"></span>Summit</div>
+        <div class="etitle">Fraud, Security &amp; Risk Management Summit</div>
+        <div class="eorg">Information Security Media Group (ISMG)</div>
+        <div class="edesc">Speaker on synthetic entity fraud, data breach-driven identity theft, and KYB verification gaps. Also a contributing author for ISMG on commercial fraud and data integrity.</div>
+        <div class="emeta">New York, NY</div>
+      </div>
+
+      <!-- D&B YouTube -->
+      <div class="ecard r" data-t="webinar">
+        <div class="etype webinar"><span class="epip"></span>Video Feature</div>
+        <div class="etitle">Spot Suspicious Businesses with D&amp;B's Fraud Risk Network</div>
+        <div class="eorg">Dun &amp; Bradstreet (YouTube)</div>
+        <div class="edesc">On-camera feature on the D&amp;B Fraud Risk Network — how Certified High Risk data, adverse intelligence, and entity resolution identify suspicious commercial actors at scale.</div>
+        <div class="emeta">November 2025 &nbsp;·&nbsp; YouTube</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="wrap">
+    <div class="eyebrow light">Speaking Topics</div>
+    <h2 class="white">What Andrew Speaks On</h2>
+    <div class="topic-grid">
+      <div class="topic-cell r"><span class="t-icon">🏢</span><div class="t-name">B2B Fraud &amp; Business Identity Theft</div><p class="t-desc">How actors steal, reactivate, and exploit corporate identities to obtain credit and government funds — and the data-driven methods to stop them.</p></div>
+      <div class="topic-cell r"><span class="t-icon">🤖</span><div class="t-name">AI-Enabled &amp; Deepfake Fraud</div><p class="t-desc">The emerging threat of generative AI in commercial fraud — synthetic documents, deepfake executives, AI-generated entities, and evolving detection strategies.</p></div>
+      <div class="topic-cell r"><span class="t-icon">🧬</span><div class="t-name">Synthetic Entity Detection</div><p class="t-desc">Practical frameworks for identifying fabricated business entities using OSINT, registry cross-referencing, behavioral analytics, and multi-source data fusion.</p></div>
+      <div class="topic-cell r"><span class="t-icon">🔍</span><div class="t-name">KYB &amp; Commercial Onboarding Risk</div><p class="t-desc">Strengthening Know Your Business controls — hidden vulnerabilities in commercial onboarding workflows, data decay, and fraudster exploitation of verification gaps.</p></div>
+      <div class="topic-cell r"><span class="t-icon">📊</span><div class="t-name">Fraud Data Strategy &amp; Governance</div><p class="t-desc">Building enterprise fraud risk frameworks — from data quality and entity resolution to ML pipelines and confidence-scored decisioning at scale.</p></div>
+      <div class="topic-cell r"><span class="t-icon">⚖️</span><div class="t-name">Fraud × AML Convergence</div><p class="t-desc">The operational overlap between fraud and financial crime compliance — breaking silos, sharing intelligence, and building unified typology libraries.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="wrap">
+    <div class="eyebrow">Media &amp; Publications</div>
+    <h2>Articles, Features &amp; Press</h2>
+    <div class="media-list r">
+      <div class="mrow"><span class="moutlet">ISMG</span><span class="mtitle">How Data Breaches and Poor Verification Lead to Synthetic Entity Fraud</span><span class="myr">2022–23</span></div>
+      <div class="mrow"><span class="moutlet">DigitalCXO</span><span class="mtitle">Contributor: Fraud Risk Intelligence, AI Integration &amp; Commercial Fraud Prevention</span><span class="myr">2024–25</span></div>
+      <div class="mrow"><span class="moutlet">ACAMS</span><span class="mtitle">In Focus: Fraud Watch — Expert Panelist &amp; Recurring Contributor</span><span class="myr">2025</span></div>
+      <div class="mrow"><span class="moutlet">Spotify</span><span class="mtitle">ACFE Fraud Talk (w/ Bruce Dorris) &amp; Leading Detection Podcast — Guest Episodes</span><span class="myr">2024–25</span></div>
+      <div class="mrow"><span class="moutlet">D&amp;B YouTube</span><span class="mtitle">D&amp;B Fraud Risk Network: Spotting Suspicious Businesses Fast</span><span class="myr">2025</span></div>
+      <div class="mrow"><span class="moutlet">NASS Deck</span><span class="mtitle">Rising Business Registrations &amp; Reactivations — National Conference Presentation</span><span class="myr">2020</span></div>
+      <div class="mrow"><span class="moutlet">LinkedIn</span><span class="mtitle">Thought Leadership: B2B Fraud, AI Risk, OSINT &amp; Commercial Identity</span><span class="myr">Ongoing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Booking</div>
+    <h2>Invite Andrew to<br>Speak at Your Event</h2>
+    <div class="contact-layout">
+      <div class="r">
+        <p class="c-intro">Andrew brings <strong>executive-level insight</strong> and real-world case studies to every engagement — keynotes, fireside chats, panels, webinars, and working groups. He speaks to financial crime professionals, commercial administrators, bank examiners, corporate risk officers, and government stakeholders.</p>
+        <ul class="c-bullets">
+          <li>B2B Fraud, Business Identity Theft &amp; Synthetic Entities</li>
+          <li>AI, Deepfakes &amp; Emerging Commercial Fraud Vectors</li>
+          <li>KYB Controls &amp; Commercial Onboarding Risk</li>
+          <li>Fraud Framework Development &amp; Best Practices</li>
+          <li>Enterprise Fraud Data Strategy &amp; Governance</li>
+          <li>AML/Fraud Convergence &amp; Typology Development</li>
+          <li>The B2B Fraud Business Landscape</li>
+        </ul>
+        <div class="venues-box">
+          <h4>Past &amp; Upcoming Venues</h4>
+          <p>Federal Reserve Bank of Philadelphia &nbsp;·&nbsp; ACFE Global Fraud Conference &nbsp;·&nbsp; ACAMS &nbsp;·&nbsp; IACA (Arizona · Indianapolis · Detroit · Rhode Island) &nbsp;·&nbsp; NASS &nbsp;·&nbsp; Delaware Fraud Working Group &nbsp;·&nbsp; ISMG &nbsp;·&nbsp; Keystone Konnection &nbsp;·&nbsp; ACFE Lehigh Valley Chapter &nbsp;·&nbsp; Dun &amp; Bradstreet Live</p>
+        </div>
+      </div>
+
+      <div class="r">
+        <form class="cform" id="contact-form" action="https://formspree.io/f/mpqbodpa" method="POST">
+          <input type="hidden" name="_replyto" value="andrewjlamarca@gmail.com">
+          <input type="hidden" name="_subject" value="New Speaking Inquiry — Andrew La Marca">
+          <input type="hidden" name="_next" value="">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="fr">
+            <div class="fld"><label>First Name</label><input type="text" placeholder="Jane" required></div>
+            <div class="fld"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fld"><label>Organization</label><input type="text" placeholder="ACFE, IACA, Federal Reserve, etc." required></div>
+          <div class="fld"><label>Email Address</label><input type="email" placeholder="you@organization.org" required></div>
+          <div class="fr">
+            <div class="fld">
+              <label>Event Type</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Keynote Address</option>
+                <option>Fireside Chat</option>
+                <option>Panel Discussion</option>
+                <option>Webinar / Virtual</option>
+                <option>Podcast Guest</option>
+                <option>Working Group</option>
+                <option>Workshop / Training</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fld"><label>Event Date / Window</label><input type="text" placeholder="Q3 2025, Fall 2026…"></div>
+          </div>
+          <div class="fld"><label>Message &amp; Topic of Interest</label><textarea rows="4" placeholder="Describe your event, audience, and the topics you'd like Andrew to address…"></textarea></div>
+          <div class="form-foot">
+            <p class="form-note">All inquiries are reviewed personally. Expect a response within 2–3 business days.</p>
+            <button type="submit" class="btn-fill" id="submit-btn">Send Inquiry →</button>
+          </div>
+          <div id="fok">✓ Your inquiry has been received. Andrew's team will be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="f-name">Andrew J. La Marca, CFE, CAMS</div>
+    <div class="f-sub">VP, Fraud &amp; Data Management &nbsp;·&nbsp; Dun &amp; Bradstreet &nbsp;·&nbsp; Fraud &nbsp;·&nbsp; Research &nbsp;·&nbsp; Managed Services &nbsp;·&nbsp; Data Management</div>
+  </div>
+  <div class="f-right">
+    <a href="https://www.linkedin.com/in/andrewjlam/" target="_blank">linkedin.com/in/andrewjlam →</a>
+    <p>© 2025 Andrew J. La Marca &nbsp;·&nbsp; All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+// Gallery toggle
+function toggleGallery() {
+  const body = document.getElementById('gbody');
+  const chev = document.getElementById('gchev');
+  const btn  = document.getElementById('gtoggle');
+  const open = body.classList.toggle('open');
+  chev.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+}
+
+// Lightbox
+function openLb(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
+
+// Engagement filter
+document.querySelectorAll('.fbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.f;
+    document.querySelectorAll('.ecard').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.t === f) ? '' : 'none';
+    });
+  });
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+document.querySelectorAll('.ecard').forEach((c,i) => {
+  c.style.transitionDelay = `${(i % 3) * 0.06}s`;
+});
+
+// Form
+// Form — Formspree AJAX
+const cform = document.getElementById('contact-form');
+if (cform) {
+  cform.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(cform.action, {
+        method: 'POST',
+        body: new FormData(cform),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('fok').style.display = 'block';
+        cform.querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+        btn.style.display = 'none';
+      } else {
+        btn.textContent = 'Error — please try again';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = 'Error — please try again';
+      btn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>
